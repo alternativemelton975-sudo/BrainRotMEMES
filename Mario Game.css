@@ -1,0 +1,86 @@
+css: |
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* FIXED START BUTTON */
+  #start-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    font-size: 2rem;
+    color: white;
+    background: black;
+    border: 3px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  #start-btn:hover {
+    background: #676767;
+  }
+
+  /* GAME CONTAINER FIXED */
+  #game-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 800px;
+    width: 1000px;
+    background: url("assets/Screenshot 2026-08-03 145044.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: none;
+    z-index: 1;
+  }
+
+  /* SCORE */
+  #score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #eee6e6;
+  }
+
+  /* PLAYER */
+  #ThickOfIt {
+    position: absolute;
+    bottom: 95px;
+    left: 50px;
+    height: 150px;
+    transition: bottom .2s;
+  }
+
+  /* CHILL GUY */
+  #ChillGuy {
+    position: absolute;
+    bottom: 95px;
+    width: 80px;
+    display: block;
+    z-index: 10;
+  }
+
+  /* JOHN PORK */
+  #JohnPork {
+    position: absolute;
+    bottom: 95px;
+    width: 70px;
+    display: block;
+    z-index: 10;
+  }
+
+  .flipped {
+    transform: scaleX(-1);
+  }
