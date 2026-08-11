@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let chillGuySpeed = 5;
     let johnPorkSpeed = 10;
 
-    let timeLeft = 30;
+    let timeLeft = 60;
     let timerInterval = null;
 
     // FIX: gameOverPermanent must be global so timer can access it
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Reset timer
         clearInterval(timerInterval);
-        timeLeft = currentGameData.timeLimit || 30;
+        timeLeft = currentGameData.timeLimit || 60;
         timerDisplay.innerText = "Time: " + timeLeft;
 
         startTimer();
