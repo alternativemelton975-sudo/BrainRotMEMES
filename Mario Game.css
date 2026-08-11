@@ -8,6 +8,10 @@ body {
     position: relative;
   }
 
+p{
+color: white;
+background-color: black;
+}
   /* FIXED START BUTTON */
   #start-btn {
     position: absolute;
@@ -24,7 +28,7 @@ body {
     z-index: 1;
   }
 
-  #start-btn:hover {
+  #start-btn: hover {
     background: #676767;
   }
 
