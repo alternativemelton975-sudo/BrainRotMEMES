@@ -9,11 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const JohnPork = document.getElementById("JohnPork");
     const ChillGuy = document.getElementById("ChillGuy");
     const scoreDisplay = document.getElementById("score");
+    const timerDisplay = document.getElementById("timer");
     const startBtn = document.getElementById("start-btn");
 
     let gameScore = 0;
     let chillGuySpeed = 5;
     let johnPorkSpeed = 10;
+
+    let timeLeft = 30;
+    let timerInterval = null;
 
     function loadLevel(index) {
         currentLevelIndex = index;
@@ -25,6 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
         chillGuySpeed = 5 * currentGameData.speedMultiplier;
         johnPorkSpeed = 10 * currentGameData.speedMultiplier;
 
+        clearInterval(timerInterval);
+        timeLeft = currentGameData.timeLimit || 30;
+        timerDisplay.innerText = "Time: " + timeLeft;
+
+        startTimer();
+
         alert("Level " + currentGameData.levelNumber + " reached!");
     }
 
@@ -33,6 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("game-container").style.display = "block";
         startGame();
     });
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            timerDisplay.innerText = "Time: " + timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                gameOverPermanent = true;
+
+                alert("Time's up!");
+                window.onkeydown = null;
+                window.onkeyup = null;
+            }
+        }, 1000);
+    }
 
     function startGame() {
         loadLevel(0);
