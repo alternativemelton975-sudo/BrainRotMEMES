@@ -1,90 +1,106 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-  }
-
-p{
-color: white;
-background-color: black;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
 }
-  /* FIXED START BUTTON */
-  #start-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 40px;
-    font-size: 2rem;
-    color: white;
-    background: black;
-    border: 3px solid white;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 1;
-  }
 
-  #start-btn: hover {
-    background: #676767;
-  }
+p {
+  color: white;
+  background-color: black;
+}
 
-  /* GAME CONTAINER FIXED */
-  #game-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 800px;
-    width: 1000px;
-    background: url("assets/Screenshot 2026-08-03 145044.png");
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    display: none;
-    z-index: 1;
-  }
+/* FIXED START BUTTON */
+#start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  font-size: 2rem;
+  color: white;
+  background: black;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
 
-  /* SCORE */
-  #score {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: #eee6e6;
-  }
+/* FIXED: removed space before :hover */
+#start-btn:hover {
+  background: #676767;
+}
 
-  /* PLAYER */
-  #ThickOfIt {
-    position: absolute;
-    bottom: 95px;
-    left: 50px;
-    height: 150px;
-    transition: bottom .2s;
-  }
+/* GAME CONTAINER FIXED */
+#game-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 600px;
+  width: 1000px;
+  background: url("assets/Screenshot 2026-08-03 145044.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 1;
+}
 
-  /* CHILL GUY */
-  #ChillGuy {
-    position: absolute;
-    bottom: 95px;
-    width: 80px;
-    display: block;
-    z-index: 10;
-  }
+/* SCORE */
+#score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #eee6e6;
+}
 
-  /* JOHN PORK */
-  #JohnPork {
-    position: absolute;
-    height: 145px;
-    bottom: 95px;
-    width: 180px;
-    display: block;
-    z-index: 40;
-  }
+/* PLAYER */
+#ThickOfIt {
+  position: absolute;
+  bottom: 95px;
+  left: 50px;
+  height: 150px;
+  transition: bottom .2s;
+}
 
-  .flipped {
-    transform: scaleX(-1);
-  }
+/* CHILL GUY */
+#ChillGuy {
+  position: absolute;
+  bottom: 95px;
+  width: 80px;
+  display: block;
+  z-index: 10;
+}
+
+/* JOHN PORK */
+#JohnPork {
+  position: absolute;
+  height: 145px;
+  bottom: 95px;
+  width: 180px;
+  display: block;
+  z-index: 40;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+/* TIMER */
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: #eee6e6;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 2px solid white;
+}

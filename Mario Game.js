@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let chillGuySpeed = 5;
     let johnPorkSpeed = 10;
 
-    let timeLeft = 60;
+    let timeLeft = 30;
     let timerInterval = null;
+
+    // FIX: gameOverPermanent must be global so timer can access it
+    let gameOverPermanent = false;
 
     function loadLevel(index) {
         currentLevelIndex = index;
@@ -29,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chillGuySpeed = 5 * currentGameData.speedMultiplier;
         johnPorkSpeed = 10 * currentGameData.speedMultiplier;
 
+        // Reset timer
         clearInterval(timerInterval);
         timeLeft = currentGameData.timeLimit || 30;
         timerDisplay.innerText = "Time: " + timeLeft;
@@ -61,12 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startGame() {
+
+        // FIX: Reset gameOverPermanent at start
+        gameOverPermanent = false;
+
         loadLevel(0);
 
         let ThickOfItJumping = false;
         let ThickOfItMovingRight = false;
         let ThickOfItMovingLeft = false;
-        let gameOverPermanent = false;
 
         let gameContainerWidth = document.getElementById("game-container").offsetWidth;
         let ThickOfItPosition = 95;
