@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let chillGuySpeed = 5;
     let johnPorkSpeed = 10;
 
-    let timeLeft = 30;
+    let timeLeft = 60;
     let timerInterval = null;
 
     function loadLevel(index) {
